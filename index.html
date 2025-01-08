@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook-P3-M19</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; color: #333; line-height: 1.6; }
+        .container { max-width: 1000px; margin: auto; padding: 20px; }
+        .header { background-color: #4CAF50; color: white; text-align: center; padding: 10px; }
+        .dropdown { margin-bottom: 20px; }
+        .dropdown select { font-size: 1em; padding: 5px; }
+        .activity { margin-bottom: 20px; }
+        .banner {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .content { display: none; padding: 10px; border: 1px solid #ddd; margin-bottom: 10px; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        span[style*="color: red;"] {
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        function updateActivities() {
+            const selectedTime = document.getElementById('class-time').value;
+            const activity2 = document.getElementById('activity-2');
+            const activity4 = document.getElementById('activity-4');
+
+            if (selectedTime === '45') {
+                if (activity2) activity2.style.display = 'none';
+                if (activity4) activity4.style.display = 'block';
+            } else if (selectedTime === '40') {
+                if (activity2) activity2.style.display = 'none';
+                if (activity4) activity4.style.display = 'none';
+            } else {
+                if (activity2) activity2.style.display = 'block';
+                if (activity4) activity4.style.display = 'block';
+            }
+
+            document.getElementById('selected-time').innerText = `Tiempo efectivo de clase: ${selectedTime} minutos`;
+        }
+
+        function toggleContent(id) {
+            const content = document.getElementById(id);
+            content.style.display = content.style.display === "none" ? "block" : "none";
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        <h1>Playbook-P3-M19</h1>
+    </div>
+    <div class="container">
+        <!-- Selector de tiempo de clase -->
+        <div class="dropdown">
+            <label for="class-time">Tiempo efectivo de Clase:</label>
+            <select id="class-time" onchange="updateActivities()">
+                <option value="50">50 minutos</option>
+                <option value="45">45 minutos</option>
+                <option value="40">40 minutos</option>
+            </select>
+        </div>
+        <h2 id="selected-time" class="time-title">Tiempo efectivo de clase: 50 minutos</h2>
+
+        <!-- Aquí se insertarán las actividades -->
+        
+        <!-- Actividad 0 -->
+<div id="activity-0" class="activity" data-time="N/A">
+    <div class="banner" onclick="toggleContent('activity_0_content')">
+        <div class="title">🔍 Actividad 0: Revisión de Misión</div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Verificar la disponibilidad de los micro:bits y materiales.
+        </div>
+    </div>
+    <div id="activity_0_content" class="content">
+        <table>
+            <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                <th style="width: 50%; padding: 10px; text-align: left;">Diálogo del Maestro</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    Revisar la disponibilidad de <span style="color: red; font-weight: bold;">micro:bits</span>, 
+                    Magic Boards, dispositivos con acceso a Internet, el editor de bloques de Micro:bit (en línea) y la proyección adecuada de las diapositivas.
+                    Verificar que los micro:bits estén cargados y listos para usar.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    No hay diálogo para los estudiantes, esta actividad es interna del profesor.
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 1 -->
+<div id="activity-1" class="activity" data-time="3">
+    <div class="banner" onclick="toggleContent('activity_1_content')">
+        <div class="title">🎉 Actividad 1: Saludo y Ritual Gnius Club ⏰ Tiempo: 3 minutos</div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Saludo y presentación del tema del día.
+        </div>
+    </div>
+    <div id="activity_1_content" class="content">
+        <table>
+            <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                <th style="width: 50%; padding: 10px; text-align: left;">Diálogo del Maestro</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 1 (0.5 minutos):</strong> Proyectar Diapositiva 1: Saludar a los estudiantes por su nombre y presentar el tema del día.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    ¡Hola, Genios! 👋 ¡Qué emoción verlos listos para otra aventura de aprendizaje! Hoy nos convertiremos en magos de la electrónica y exploraremos el fascinante mundo de los <span style="color: red; font-weight: bold;">microcontroladores</span>. ¿Están preparados para hacer magia con los <span style="color: red; font-weight: bold;">micro:bits</span>?
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 2 (1 minuto):</strong> Proyectar Diapositiva 2: Pedir a los estudiantes que elijan una posición para indicar cómo se sienten.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    A ver, ¡muéstrenme su energía! Si están listos para crear y explorar, levanten los brazos como cohetes despegando. 🚀 Si necesitan un poquito más de combustible, crucen los brazos para recargar. ¡Quiero ver esas manos!
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 3 (0.5 minutos):</strong> Proyectar Diapositiva 3: Guiar a los estudiantes en el ritual de agradecimiento.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    Ahora, unamos nuestras manos como si estuviéramos conectando nuestros circuitos. 🙏 ¡Demos gracias por esta oportunidad de aprender juntos! Digamos: '¡Gracias por estar aquí, Genios! Hoy va a ser un día increíble de descubrimiento y creación con nuestros <span style="color: red; font-weight: bold;">micro:bits</span>!'
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 4 (1 minuto):</strong> Proyectar Diapositiva 4: Explicar los objetivos de la clase, destacando las acciones que realizarán.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    ¡Genial! Hoy nuestra misión es convertirnos en expertos en <span style="color: red; font-weight: bold;">microcontroladores</span>. Para lograrlo, tenemos tres <span style="color: red; font-weight: bold;">objetivos</span> principales que están aquí en la pantalla: 1) Entender qué es un <span style="color: red; font-weight: bold;">microcontrolador</span>, 2) Programar un <span style="color: red; font-weight: bold;">micro:bit</span> para mostrar información y 3) Explorar la pantalla LED del <span style="color: red; font-weight: bold;">micro:bit</span>. ¡Estos son los pasos para convertirnos en verdaderos genios electrónicos! ¡Prepárense para esta aventura!
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 2 -->
+<div id="activity-2" class="activity" data-time="5">
+    <div class="banner" onclick="toggleContent('activity_2_content')">
+        <div class="title">💡 Actividad 2: Innovación del Día ⏰ Tiempo: 5 minutos</div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Exploración de microcontroladores en dispositivos cotidianos.
+        </div>
+    </div>
+    <div id="activity_2_content" class="content">
+        <table>
+            <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                <th style="width: 50%; padding: 10px; text-align: left;">Diálogo del Maestro</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 1 (0.5 minutos):</strong> Proyectar Diapositiva 5: Explicar brevemente el impacto de los <span style="color: red; font-weight: bold;">microcontroladores</span> en dispositivos cotidianos.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    ¡Genios! Prepárense para una dosis de asombro. 🤯 Hoy les mostraré cómo esos pequeños <span style="color: red; font-weight: bold;">microcontroladores</span>, que vamos a usar en clase, están en todos lados. ¡Son como los superhéroes invisibles de la tecnología! ¿Quieren saber dónde los encontramos?
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 2 (2 minutos):</strong> Proyectar Diapositiva 6: Reproducir un video corto (1 minuto) que muestre cómo los <span style="color: red; font-weight: bold;">microcontroladores</span> hacen funcionar diferentes aparatos.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    ¡Ahora vean esto! 👀 Les mostraré un video corto que explica cómo los <span style="color: red; font-weight: bold;">microcontroladores</span> hacen magia. ¡Presten atención a cómo estos pequeños cerebros electrónicos hacen que todos esos aparatos funcionen como por arte de magia!
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 3 (2.5 minutos):</strong> Proyectar Diapositiva 7: Hacer preguntas detonadoras para que los estudiantes reflexionen sobre cómo los <span style="color: red; font-weight: bold;">microcontroladores</span> facilitan la vida cotidiana.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    ¿Qué les pareció, Genios? 🤩 ¿Se imaginaban que estos pequeños chips estuvieran detrás de tantas cosas? ¿Cómo creen que los <span style="color: red; font-weight: bold;">microcontroladores</span> nos facilitan la vida? ¿Se les ocurre algún otro aparato donde también los podemos encontrar? ¡A pensar como genios!
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<!-- Actividad 3 -->
+<div id="activity-3" class="activity" data-time="11">
+    <div class="banner" onclick="toggleContent('activity_3_content')">
+        <div class="title">🧠 Actividad 3: Brain Gym ⏰ Tiempo: 11 minutos</div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Exploración de bloques básicos y su uso en programación.
+        </div>
+    </div>
+    <div id="activity_3_content" class="content">
+        <table>
+            <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                <th style="width: 50%; padding: 10px; text-align: left;">Diálogo del Maestro</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 1 (0.5 minutos):</strong> Proyectar Diapositiva 8: Anunciar la actividad Brain Gym y mencionar el <span style="color: red; font-weight: bold;">Easter Egg</span> oculto en la explicación de la interfaz del editor de bloques.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    ¡Genios, activen sus cerebros de programadores! 🧠 Es hora del Brain Gym, donde aprenderemos a programar nuestro <span style="color: red; font-weight: bold;">micro:bit</span>. Pero, ¡atención! He escondido un <span style="color: red; font-weight: bold;">Easter Egg</span> en la explicación de la interfaz y de los bloques. ¡Presten mucha atención a cada detalle porque el que lo descubra se ganará una recompensa extra! ¿Listos para la cacería de <span style="color: red; font-weight: bold;">Easter Eggs</span>?
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 2 (2 minutos):</strong> Proyectar Diapositiva 9: Explicar cómo acceder al <span style="color: red; font-weight: bold;">editor de bloques</span> de Micro:bit y mostrar la interfaz del editor.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    ¡Vamos a darle vida a nuestros <span style="color: red; font-weight: bold;">micro:bits</span>, Genios! 💻 Primero, abran el <span style="color: red; font-weight: bold;">editor de bloques</span> en sus tablets. Verán una interfaz con varias áreas importantes. En el centro, tenemos el área de programación, donde arrastraremos los bloques para crear nuestros programas. A la izquierda, encontrarán las categorías de bloques, como 'Básico', 'Entrada' y 'Salida'. ¡Y en la parte superior, tenemos nuestro simulador virtual del <span style="color: red; font-weight: bold;">Micro:bit</span> para probar nuestros programas antes de pasarlos al <span style="color: red; font-weight: bold;">Micro:bit</span> físico!
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 3 (4.5 minutos):</strong> Proyectar Diapositiva 10: Detallar los bloques "mostrar número", "mostrar LEDs", "mostrar icono", "mostrar cadena", "borrar la pantalla", "para siempre", "al iniciar", "pausa (ms)", "mostrar flecha".
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    ¡Ahora, vamos a conocer los bloques mágicos del <span style="color: red; font-weight: bold;">micro:bit</span>! ✨ Tenemos los bloques de la categoría <span style="color: red; font-weight: bold;">'Básico'</span> (color azul): 'mostrar número' para poner números en la pantalla, 'mostrar LEDs' para dibujar con luces, 'mostrar icono' para poner stickers como corazones o caras, 'mostrar cadena' (o texto) para que el <span style="color: red; font-weight: bold;">micro:bit</span> nos hable con palabras. 'Borrar la pantalla' para limpiar la pantalla, 'para siempre' para hacer que el <span style="color: red; font-weight: bold;">micro:bit</span> repita instrucciones sin parar, 'al iniciar' para que nuestro programa comience cuando lo encendamos por primera vez, 'pausa' para que las acciones se tomen su tiempo y 'mostrar flecha' para indicarnos direcciones. Además tenemos el bloque 'al presionar el botón A' (categoría 'Entrada', color morado) que hace que el <span style="color: red; font-weight: bold;">micro:bit</span> reaccione cuando presionemos el botón A. ¡Cada uno tiene un poder especial para que el <span style="color: red; font-weight: bold;">micro:bit</span> haga cosas increíbles!
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 4 (2 minutos):</strong> Proyectar Diapositiva 11: Explicar cómo conectar los bloques y cómo se ejecutan en secuencia, mostrando el ejemplo "mostrar icono" y "mostrar texto".
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    Recuerden, Genios, el orden importa. ☝️ Los bloques se leen de arriba hacia abajo. ¡Vamos a hacer nuestro primer programa! Arrastren el bloque 'al iniciar', luego coloquen el bloque 'mostrar icono' y elijan una carita feliz. Después agreguen el bloque 'mostrar texto' y escriban 'Hola'. ¡Conecten los bloques de arriba hacia abajo y presionen el botón de play en el simulador! Verán cómo el <span style="color: red; font-weight: bold;">micro:bit</span> primero muestra la carita y luego dice hola, todo en orden. ¡Esto es programación en acción!
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 5 (1.5 minutos):</strong> Proyectar Diapositiva 12: Explicar el bloque "al presionar el botón A" como ejemplo de bloque de evento.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    ¡Y ahora, vamos a interactuar con nuestro <span style="color: red; font-weight: bold;">micro:bit</span>! 🕹️ En la categoría 'Entrada', encontrarán bloques de evento. Por ejemplo, pueden usar el bloque 'al presionar el botón A'. Este bloque es como un sensor que activa una acción. Arrastren este bloque al área de programación y conéctenlo al bloque 'mostrar texto' que diga 'Apresionado'. ¡Ahora verán que cuando presionen el botón A del simulador, el mensaje aparecerá en la pantalla! (Esta parte es clave para el <span style="color: red; font-weight: bold;">Easter Egg</span>)
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 6 (1 minuto):</strong> Proyectar Diapositiva 13: Guiar una breve reflexión sobre la experiencia de programación en el simulador.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    Genios, ¿cómo se sintieron al programar su <span style="color: red; font-weight: bold;">micro:bit</span> en el simulador? 🤔 ¿Qué les pareció más interesante al ver cómo los bloques cobran vida en la pantalla? ¿Cuál es tu bloque favorito y por qué? ¡Reflexionemos sobre lo que hemos aprendido hoy!
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 7 (0.5 minutos):</strong> Proyectar Diapositiva 14: Repasar los <span style="color: red; font-weight: bold;">objetivos</span> de la actividad y los elementos de la interfaz explorados.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    ¡Excelente trabajo, equipo! 🎉 Hoy exploramos la interfaz del <span style="color: red; font-weight: bold;">editor de bloques</span> de <span style="color: red; font-weight: bold;">micro:bit</span>, usamos los bloques básicos: 'mostrar número', 'mostrar LEDs', 'mostrar icono', 'mostrar cadena', 'borrar la pantalla', 'para siempre', 'al iniciar', 'pausa (ms)', 'mostrar flecha' y 'al presionar el botón A', conectamos bloques en secuencia, e hicimos nuestro primer programa con una carita feliz y un saludo. ¡Esto solo es el comienzo, hay muchas cosas por descubrir! ¡Sigan practicando para ser expertos programadores de <span style="color: red; font-weight: bold;">micro:bits</span>!
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<!-- Actividad 4 -->
+<div id="activity-4" class="activity" data-time="2">
+    <div class="banner" onclick="toggleContent('activity_4_content')">
+        <div class="title">⚡ Actividad 4: Brain Vitamin ⏰ Tiempo: 2 minutos</div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Ejercicio rápido para recargar energías.
+        </div>
+    </div>
+    <div id="activity_4_content" class="content">
+        <table>
+            <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                <th style="width: 50%; padding: 10px; text-align: left;">Diálogo del Maestro</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 1 (0.5 minutos):</strong> Proyectar Diapositiva 15: Explicar que harán un ejercicio rápido para <span style="color: red; font-weight: bold;">recargar</span> la energía de sus cerebros.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    ¡Genios! Es hora de <span style="color: red; font-weight: bold;">recargar</span> nuestras energías con un Brain Vitamin. ⚡ Vamos a hacer un ejercicio rápido para despertar nuestro cuerpo y nuestra mente. ¡Sigan mis instrucciones y prepárense para el gran desafío que viene!
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 2 (1 minuto):</strong> Proyectar Diapositiva 16: Indicar los movimientos de <span style="color: red; font-weight: bold;">secuencia</span> para que los estudiantes los sigan (como un pequeño baile de programación).
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    Vamos a hacer un pequeño baile de programación. Cuando diga '<span style="color: red; font-weight: bold;">arriba</span>', levanten los brazos; cuando diga '<span style="color: red; font-weight: bold;">derecha</span>', den un paso a la derecha; cuando diga '<span style="color: red; font-weight: bold;">izquierda</span>', den un paso a la izquierda; y cuando diga '<span style="color: red; font-weight: bold;">inicio</span>', hagan un pequeño salto. ¡A ver quién puede seguir la <span style="color: red; font-weight: bold;">secuencia</span> sin confundirse!
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 3 (0.5 minutos):</strong> Sin Diapositiva: Explicar cómo el ejercicio ayuda a entender la importancia de seguir <span style="color: red; font-weight: bold;">secuencias</span>.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    ¡Muy bien, Genios! ¿Vieron cómo seguir una <span style="color: red; font-weight: bold;">secuencia</span> es importante para no perderse? En programación es igual: cada paso debe ir en su orden para que el <span style="color: red; font-weight: bold;">micro:bit</span> haga lo que queremos. ¡Están listos para programar como verdaderos genios!
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 5 -->
+<div id="activity-5" class="activity" data-time="3">
+    <div class="banner" onclick="toggleContent('activity_5_content')">
+        <div class="title">🤝 Actividad 5: Team Gnius ⏰ Tiempo: 3 minutos</div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Formación de equipos y asignación de roles.
+        </div>
+    </div>
+    <div id="activity_5_content" class="content">
+        <table>
+            <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                <th style="width: 50%; padding: 10px; text-align: left;">Diálogo del Maestro</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 1 (0.5 minutos):</strong> Proyectar Diapositiva 17: Explicar la formación de equipos y la importancia de la <span style="color: red; font-weight: bold;">colaboración</span>.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    ¡Genios, es hora de formar nuestros equipos de superprogramadores! 🦸‍♀️🦸‍♂️ Trabajaremos en parejas para el gran desafío, y cada uno tendrá un rol especial. Uno será el '<span style="color: red; font-weight: bold;">Programador Principal</span>' y el otro el '<span style="color: red; font-weight: bold;">Asistente de Diseño</span>'. ¡Ambos son súper importantes para lograr el éxito!
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 2 (0.5 minutos):</strong> Proyectar Diapositiva 18: Mostrar un temporizador de 30 segundos para que los estudiantes se organicen en equipos y definan sus roles.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    Tienen 30 segundos para encontrar a su compañero y decidir quién será el '<span style="color: red; font-weight: bold;">Programador Principal</span>' y quién el '<span style="color: red; font-weight: bold;">Asistente de Diseño</span>'. ¡El '<span style="color: red; font-weight: bold;">Programador Principal</span>' será quien escriba el código, mientras que el '<span style="color: red; font-weight: bold;">Asistente de Diseño</span>' ayudará con el diseño y la planificación! ¡El tiempo corre!
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 3 (0.5 minutos):</strong> Proyectar Diapositiva 19: Recordar que cada alumno usará su propia <span style="color: red; font-weight: bold;">Magic Tablet</span>, pero que colaborarán en equipo.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    Aunque cada uno tendrá su propia <span style="color: red; font-weight: bold;">Magic Tablet</span>, trabajarán en conjunto. El '<span style="color: red; font-weight: bold;">Programador Principal</span>' tomará la iniciativa en el <span style="color: red; font-weight: bold;">editor de bloques</span>, mientras el '<span style="color: red; font-weight: bold;">Asistente</span>' ayudará a revisar y proponer ideas. ¡Recuerden, el <span style="color: red; font-weight: bold;">trabajo en equipo</span> nos hace más fuertes!
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 4 (0.5 minutos):</strong> Proyectar Diapositiva 20: Mostrar un temporizador de 30 segundos para que los estudiantes preparen sus tablets y confirmen que están listas.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    Asegúrense de que sus <span style="color: red; font-weight: bold;">Magic Tablets</span> están listas y conectadas. ¡Tienen 30 segundos para verificar que todo esté funcionando!
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 5 (1 minuto):</strong> Sin Diapositiva: Explicar la importancia de la <span style="color: red; font-weight: bold;">colaboración</span> y <span style="color: red; font-weight: bold;">comunicación</span> entre los compañeros durante el desafío.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    ¡Genios, ahora que están organizados, recuerden que la clave está en la <span style="color: red; font-weight: bold;">comunicación</span>! Asegúrense de compartir sus ideas, escuchar a su compañero y trabajar juntos para lograr los mejores resultados. ¡La <span style="color: red; font-weight: bold;">colaboración</span> y el <span style="color: red; font-weight: bold;">trabajo en equipo</span> son nuestros mejores poderes!
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<!-- Actividad 6 -->
+<div id="activity-6" class="activity" data-time="15.5">
+    <div class="banner" onclick="toggleContent('activity_6_content')">
+        <div class="title">🚀 Actividad 6: Challenge ⏰ Tiempo: 15.5 minutos</div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Introducción al paper programming y creación de desafíos.
+        </div>
+    </div>
+    <div id="activity_6_content" class="content">
+        <table>
+            <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                <th style="width: 50%; padding: 10px; text-align: left;">Diálogo del Maestro</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 1 (1 minuto):</strong> Proyectar Diapositiva 21: Introducir el concepto de <span style="color: red; font-weight: bold;">paper programming</span>.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    ¡Genios, llegó el momento del gran desafío! 🚀 Antes de lanzarnos a programar en el <span style="color: red; font-weight: bold;">editor de bloques</span>, vamos a usar una técnica secreta llamada '<span style="color: red; font-weight: bold;">paper programming</span>'. Es como dibujar un mapa antes de explorar un territorio desconocido, o como escribir el guion de una película antes de grabarla. ¡Nos ayudará a planificar nuestras ideas antes de escribir código!
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 2 (1 minuto):</strong> Proyectar Diapositiva 22: Presentar los niveles de reto.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    Tienen tres niveles de <span style="color: red; font-weight: bold;">reto</span> para elegir, dependiendo de cuánta magia quieran crear: el nivel '<span style="color: red; font-weight: bold;">Rookie</span>', donde mostrarán un mensaje o ícono simple; el nivel '<span style="color: red; font-weight: bold;">Master</span>', donde harán una pequeña animación con varios mensajes; y el nivel '<span style="color: red; font-weight: bold;">Hacker</span>', donde crearán un programa que responda a las interacciones del <span style="color: red; font-weight: bold;">micro:bit</span>. ¿Cuál es su nivel de superpoder?
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 3 (1.5 minutos):</strong> Proyectar Diapositiva 23: Observar la interfaz del <span style="color: red; font-weight: bold;">editor de bloques</span> y planificar el diseño.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    Primero, observen la interfaz del <span style="color: red; font-weight: bold;">editor de bloques</span> y piensen en qué quieren que haga su <span style="color: red; font-weight: bold;">micro:bit</span>. ¿Qué mensajes o imágenes quieren mostrar? ¿Quieren que haga una animación? ¿Que reaccione cuando presionen un botón? Escriban cada paso en papel como si fuera una lista de <span style="color: red; font-weight: bold;">instrucciones</span>. Por ejemplo, podrían usar '<span style="color: red; font-weight: bold;">al iniciar</span>', '<span style="color: red; font-weight: bold;">mostrar icono</span>', '<span style="color: red; font-weight: bold;">mostrar texto</span>', y así sucesivamente, tal cual como los bloques que hemos visto.
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 4 (7.5 minutos):</strong> Proyectar Diapositiva 24: Crear el <span style="color: red; font-weight: bold;">paper programming</span> detallado.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    Escriban con mucho detalle cada paso de su secuencia en sus <span style="color: red; font-weight: bold;">Magic Tablets</span>. Los '<span style="color: red; font-weight: bold;">Rookies</span>' harán un plan para un mensaje o ícono; los '<span style="color: red; font-weight: bold;">Masters</span>' harán un plan para una animación; y los '<span style="color: red; font-weight: bold;">Hackers</span>' harán un plan para que su <span style="color: red; font-weight: bold;">micro:bit</span> responda a las interacciones. ¡Recuerden ser claros y específicos para que el <span style="color: red; font-weight: bold;">micro:bit</span> haga exactamente lo que ustedes quieren!
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 5 (2 minutos):</strong> Proyectar Diapositiva 25: Explicación a un compañero usando el método del <span style="color: red; font-weight: bold;">Patito de Goma</span>.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    Ahora que tienen su secuencia en papel, explíquenle a su compañero cada paso, como si él o ella fuera un <span style="color: red; font-weight: bold;">Patito de Goma</span>. El compañero solo debe asentir si entiende o agitar la cabeza si no lo hace. ¡Esto les ayudará a ver si sus <span style="color: red; font-weight: bold;">instrucciones</span> son claras y fáciles de seguir!
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 6 (1 minuto):</strong> Proyectar Diapositiva 26: Intercambiar roles y repetir la explicación.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    Ahora, cambien de roles. El que fue programador será ahora el <span style="color: red; font-weight: bold;">Patito de Goma</span>, y el que fue patito explicará su secuencia. ¡Recuerden ser claros y seguir el orden!
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 7 (1 minuto):</strong> Proyectar Diapositiva 27: Revisar y ajustar las <span style="color: red; font-weight: bold;">instrucciones</span>.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    Ahora, tómense 1 minuto para discutir si las <span style="color: red; font-weight: bold;">instrucciones</span> de su compañero fueron claras y si hay algo que mejorar. ¡Recuerden, el objetivo es tener una secuencia lógica y clara para trasladar al <span style="color: red; font-weight: bold;">editor de bloques</span>! ¡Este es el momento para mejorar sus <span style="color: red; font-weight: bold;">instrucciones</span>!
+                </td>
+            </tr>
+                <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 8 (0.5 minutos):</strong> Proyectar Diapositiva 28: Celebrar el éxito con "<span style="color: red; font-weight: bold;">Mon-e Time</span>".
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    ¡Genios, excelente trabajo! Han completado el <span style="color: red; font-weight: bold;">paper programming</span> para sus <span style="color: red; font-weight: bold;">micro:bits</span>. ¡Les toca <span style="color: red; font-weight: bold;">Mon-e</span> por su esfuerzo y creatividad! Ahora repasemos los <span style="color: red; font-weight: bold;">objetivos</span> que hemos alcanzado en esta misión.
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 7 -->
+<div id="activity-7" class="activity" data-time="5">
+    <div class="banner" onclick="toggleContent('activity_7_content')">
+        <div class="title">🥚 Actividad 7: Easter Egg ⏰ Tiempo: 5 minutos</div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Desafío especial sobre el bloque "al presionar el botón A".
+        </div>
+    </div>
+    <div id="activity_7_content" class="content">
+        <table>
+            <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                <th style="width: 50%; padding: 10px; text-align: left;">Diálogo del Maestro</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 1 (0.5 minutos):</strong> Proyectar Diapositiva 30: Anunciar el momento del <span style="color: red; font-weight: bold;">Easter Egg</span>.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    ¡Genios, llegó el momento que todos estaban esperando: el <span style="color: red; font-weight: bold;">Easter Egg</span>! 🥚 ¿Recuerdan que les dije que había un reto secreto escondido en la clase? Pues bien, ¡es hora de encontrarlo! Vamos a ver quién estuvo muy atento a todo lo que aprendimos hoy.
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 2 (1 minuto):</strong> Proyectar Diapositiva 31: Realizar la pregunta del <span style="color: red; font-weight: bold;">Easter Egg</span>.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    Aquí va la pregunta del <span style="color: red; font-weight: bold;">Easter Egg</span>: ¿Para qué sirve el bloque de evento '<span style="color: red; font-weight: bold;">al presionar el botón A</span>' que vimos en el Brain Gym? Recuerden que esta información la dimos cuando explicamos los bloques básicos y lo usamos en el ejemplo. ¡Tómense unos segundos para pensarlo y levanten la mano si saben la respuesta!
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 3 (1 minuto):</strong> Sin diapositiva: Invitar a algunos estudiantes a dar su respuesta en voz baja.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    Voy a elegir a algunos de ustedes para que me den su respuesta en voz baja. ¡No se preocupen si no están seguros, lo importante es intentarlo! A ver quién tiene clara la función del bloque de eventos.
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 4 (2.5 minutos):</strong> Proyectar Diapositiva 32: Mostrar la respuesta correcta y reconocer a los ganadores.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    ¡La respuesta correcta es... El bloque '<span style="color: red; font-weight: bold;">al presionar el botón A</span>' se usa para que el <span style="color: red; font-weight: bold;">micro:bit</span> haga algo cuando presionamos el botón A! ¡Felicidades a quienes respondieron bien! Han demostrado ser verdaderos genios y ganan <span style="color: red; font-weight: bold;">Mon-e</span> extra por su gran atención y dedicación.
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 8 -->
+<div id="activity-8" class="activity" data-time="2">
+    <div class="banner" onclick="toggleContent('activity_8_content')">
+        <div class="title">🏅 Actividad 8: Honor the Lab ⏰ Tiempo: 2 minutos</div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Reflexión final y organización del espacio de trabajo.
+        </div>
+    </div>
+    <div id="activity_8_content" class="content">
+        <table>
+            <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                <th style="width: 50%; padding: 10px; text-align: left;">Diálogo del Maestro</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 1 (0.5 minutos):</strong> Proyectar Diapositiva 33: Resumir los <span style="color: red; font-weight: bold;">objetivos</span> alcanzados durante la clase.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    Genios, hemos llegado al final de nuestra aventura de hoy. 🥳 Antes de despedirnos, revisemos todo lo que logramos: aprendimos qué son los <span style="color: red; font-weight: bold;">microcontroladores</span>, exploramos su funcionamiento, usamos bloques básicos para hacer programas, creamos <span style="color: red; font-weight: bold;">secuencias lógicas</span>, hicimos el <span style="color: red; font-weight: bold;">paper programming</span> y hasta encontramos un <span style="color: red; font-weight: bold;">Easter Egg</span>. ¡Increíble trabajo de todos!
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 2 (0.5 minutos):</strong> Sin diapositiva: Agradecer y felicitar a los estudiantes por su dedicación y <span style="color: red; font-weight: bold;">colaboración</span> durante la clase.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    Hoy, todos hicieron un esfuerzo maravilloso, desde el <span style="color: red; font-weight: bold;">paper programming</span> hasta la cacería de <span style="color: red; font-weight: bold;">Easter Egg</span>. Cada uno de ustedes mostró creatividad, <span style="color: red; font-weight: bold;">trabajo en equipo</span> y pasión por aprender. ¡Es un honor trabajar con genios como ustedes! ¡Felicidades!
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 3 (1 minuto):</strong> Proyectar Diapositiva 34: Reflexión final sobre lo aprendido.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    Hoy aprendimos que cada paso cuenta en la <span style="color: red; font-weight: bold;">programación</span>, desde planificar hasta ejecutar nuestras ideas. ¿Qué les sorprendió más de trabajar con <span style="color: red; font-weight: bold;">micro:bits</span>? 🤔 ¿Cómo creen que podrían usar estas habilidades en otros proyectos? ¡Compartan sus ideas y sigan imaginando!
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 4 (1 minuto):</strong> Proyectar Diapositiva 35: Cierre con el mensaje de "Honremos el Dojo".
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    Y como siempre, antes de irnos, vamos a honrar nuestro espacio de trabajo. 🙏 Recojan sus tablets, <span style="color: red; font-weight: bold;">micro:bits</span>, y asegúrense de que el salón queda tan ordenado como nuestros programas. ¡Gracias por cuidar el espacio y por su increíble energía!
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+
+
+
+    </div>
+</body>
+</html>
